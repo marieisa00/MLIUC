@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MLIUC Session</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
+</head>
+
+<body>
+
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="lab la-accusoft"></span> <span>MLIUC</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="index.html"><span class="las la-table" ></span>
+                    <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="matiere.html"><span class="las la-bookmark" ></span>
+                    <span>Matieres</span></a>
+                </li>
+                <li>
+                    <a href="classe.html"><span class="las la-user-graduate" ></span>
+                    <span>Classes</span></a>
+                </li>
+                <li>
+                    <a href="session.html" class="active"><span class=" las la-business-time " ></span>
+                    <span>Session</span></a>
+                </li>
+                <li>
+                    <a href=" "><span class="las la-user-circle " ></span>
+                    <span>Profil</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content ">
+        <header>
+            <h2>
+                <label for="nav-toggle ">
+                    <span class="las la-bars "></span>
+                    </label> Session
+            </h2>
+
+            <div class="search-wrapper ">
+                <span class="las la-search "></span>
+                <input type="search " placeholder="Recherche ici " />
+            </div>
+
+            <div class="user-wrapper ">
+                <img src="admin.png " width="35px " height="30px " alt=" ">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Responsable de filiere</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="conteneur">
+                <table width="10%">
+                    <P>
+                        <h4>Choisissez une session :</h4>
+                        <SELECT name="langage">
+                    <OPTION>Session 1
+                    <OPTION>Session 2
+                    
+                    
+                </SELECT>
+                </table>
+
+                <P class="flex">
+                    <h4>Choisissez une matiere :</h4>
+                    <SELECT name="langage">
+                        <OPTION>Algèbre de boole
+                        <OPTION>Archi des ordinateurs
+                        <OPTION>SE
+                        <option>POO
+                        
+                        
+                    </SELECT>
+            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Liste rattrapage</h2>
+                        </div>
+                        <div class="card-body">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>NOM</td>
+                                        <td>PRENOM</td>
+                                        <td>MATRICULE</td>
+                                        <td>OPTIONS</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+
+</body>
+
+</html>
