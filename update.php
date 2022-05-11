@@ -78,6 +78,10 @@ if(isset($_POST['submit'])){
                     <a href=""><span class="las la-user-circle" ></span>
                     <span>Demandes</span></a>
                 </li>
+                <li>
+                    <a href=""><span class="las la-print"></span>
+                    <span>Exporter</span></a>
+                </li>
             </ul>
         </div>
     </div>

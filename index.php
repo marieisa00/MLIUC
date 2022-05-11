@@ -11,7 +11,7 @@ include ("config.php");
     <title>MLIUC Classe</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="style_index.css">
-  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 </head>
 <body>
    
@@ -37,11 +37,15 @@ include ("config.php");
                 </li>
                 <li>
                     <a href="datatable.html"><span class="las la-business-time" ></span>
-                    <span>Session</span></a>
+                    <span>Liste Inscrits</span></a>
                 </li>
                 <li>
                     <a href=""><span class="las la-user-circle" ></span>
-                    <span>Profil</span></a>
+                    <span>Demandes</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-print"></span>
+                    <span>Exporter</span></a>
                 </li>
             </ul>
         </div>
@@ -50,14 +54,14 @@ include ("config.php");
     <div class="main-content">
         <header>
             <h2>
-                <label for="">
+                <label for="nav-toggle">
                     <span class="las la-bars"></span>
-                </label> Classes
+                    </label> Liste Inscrits
             </h2>
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="Rechercher ici" />
+                <input type="search" placeholder="Recherche ici" />
             </div>
 
             <div class="user-wrapper">

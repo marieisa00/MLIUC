@@ -224,7 +224,7 @@ h3 {
     border: 1px solid #f0f0f0;
 }
 
-.card-header button {
+.main-content button {
     background: var(--main-color);
     border-radius: 20px;
     color: #fff;

@@ -1,13 +1,14 @@
 <?php
-include 'connect.php';
+$connect = mysqli_connect("localhost", "root", "", "mliuc");
+$sql = "SELECT * FROM inscrit";  
+$result = mysqli_query($connect, $sql);
 ?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLIUC Inscrit</title>
+    <title>MLIUC Emargement</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="style_index.css">
@@ -37,7 +38,7 @@ include 'connect.php';
                     <span>Classes</span></a>
                 </li>
                 <li>
-                    <a href="datatable.html" class="active"><span class="las la-business-time" ></span>
+                    <a href="datatable.html"><span class="las la-business-time" ></span>
                     <span>Liste Inscrits</span></a>
                 </li>
                 <li>
@@ -45,7 +46,7 @@ include 'connect.php';
                     <span>Demandes</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-print"></span>
+                    <a href="" class="active"><span class="las la-print"></span>
                     <span>Exporter</span></a>
                 </li>
             </ul>
@@ -57,7 +58,7 @@ include 'connect.php';
             <h2>
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
-                    </label> Liste Inscrits
+                    </label> Exporter
             </h2>
 
             <div class="search-wrapper">
@@ -77,23 +78,22 @@ include 'connect.php';
         <div class="main-content">
     <main>
     <div class="card-header">
-            <h3>Nouveaux Inscrits</h3>
-            <button><a href="inscrit.php" class="text-light">Ajoutez étudiant<span class="las la-arrow-right"></span></a>
-            
-            </button>
+            <h3>Liste d'emargement</h3>
+            <form method="post" action="export.php">
+     <input type="submit" name="export" class="btn btn-success" value="Exporter" />
+    </form>
     </div>
             <div class="card">
             <div class="card-body">
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">N°</th>
       <th scope="col">Nom</th>
       <th scope="col">Prénom</th>
       <th scope="col">Matricule</th>
       <th scope="col">Matière</th>
       <th scope="col">Classe</th>
-      <th scope="col">Operation</th>
+      <th scope="col">Signature</th>
 
 
     </tr>
@@ -102,29 +102,24 @@ include 'connect.php';
 
 <?php
 
-$sql="Select * from `inscrit`";
-$result=mysqli_query($con,$sql);
-if($result){
     while ($row=mysqli_fetch_assoc($result)){
-    $idInscrit=$row['idInscrit'];
+    
     $nom=$row['nom'];
     $prenom=$row['prenom'];
     $matricule=$row['matricule'];
     $matiere=$row['matiere'];
     $classe=$row['classe'];
     echo '<tr>
-    <th scope="row">'.$idInscrit.'</th>
+    
     <td>'.$nom.'</td>
     <td>'.$prenom.'</td>
     <td>'.$matricule.'</td>
     <td>'.$matiere.'</td>
     <td>'.$classe.'</td>
-    <td>
-        <button class="btn btn-primary"><a href="update.php?updateid='.$idInscrit.'" class="text-light" >Mettre à jour</a></button>
-        <button class="btn btn-danger"><a href="delete.php?deleteid='.$idInscrit.'" class="text-light">Supprimer</a></button>
-    </td>
+    
+    
   </tr>';
-    }
+    
 }
 
 ?>
