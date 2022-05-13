@@ -27,7 +27,7 @@ $result = mysqli_query($connect, $sql);
             <ul>
                 <li>
                     <a href="index.html"><span class="las la-table" ></span>
-                    <span>Dashboard</span></a>
+                    <span>Tableau de bord</span></a>
                 </li>
                 <li>
                     <a href="matiere.html"><span class="las la-bookmark" ></span>
@@ -35,7 +35,7 @@ $result = mysqli_query($connect, $sql);
                 </li>
                 <li>
                     <a href="classe.html"><span class="las la-user-graduate" ></span>
-                    <span>Classes</span></a>
+                    <span>Etudiants</span></a>
                 </li>
                 <li>
                     <a href="datatable.html"><span class="las la-business-time" ></span>
@@ -69,7 +69,7 @@ $result = mysqli_query($connect, $sql);
             <div class="user-wrapper">
                 <img src="admin.png" width="35px" height="30px" alt="">
                 <div>
-                    <h4>Tchouta Alain</h4>
+                    <h4>TCHOUTA ALAIN</h4>
                     <small>Responsable de filiere</small>
                 </div>
             </div>
@@ -79,6 +79,7 @@ $result = mysqli_query($connect, $sql);
     <main>
     <div class="card-header">
             <h3>Liste d'emargement</h3>
+            
             <form method="post" action="export.php">
      <input type="submit" name="export" class="btn btn-success" value="Exporter" />
     </form>

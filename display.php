@@ -26,7 +26,7 @@ include 'connect.php';
             <ul>
                 <li>
                     <a href="index.html"><span class="las la-table" ></span>
-                    <span>Dashboard</span></a>
+                    <span>Tableau de bord</span></a>
                 </li>
                 <li>
                     <a href="matiere.html"><span class="las la-bookmark" ></span>
@@ -34,7 +34,7 @@ include 'connect.php';
                 </li>
                 <li>
                     <a href="classe.html"><span class="las la-user-graduate" ></span>
-                    <span>Classes</span></a>
+                    <span>Etudiants</span></a>
                 </li>
                 <li>
                     <a href="datatable.html" class="active"><span class="las la-business-time" ></span>
@@ -68,7 +68,7 @@ include 'connect.php';
             <div class="user-wrapper">
                 <img src="admin.png" width="35px" height="30px" alt="">
                 <div>
-                    <h4>Tchouta Alain</h4>
+                    <h4>TCHOUTA ALAIN</h4>
                     <small>Responsable de filiere</small>
                 </div>
             </div>
@@ -78,6 +78,7 @@ include 'connect.php';
     <main>
     <div class="card-header">
             <h3>Nouveaux Inscrits</h3>
+            
             <button><a href="inscrit.php" class="text-light">Ajoutez étudiant<span class="las la-arrow-right"></span></a>
             
             </button>

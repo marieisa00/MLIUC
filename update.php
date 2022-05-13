@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
             <ul>
                 <li>
                     <a href="index.html"><span class="las la-table" ></span>
-                    <span>Dashboard</span></a>
+                    <span>Tableau de bord</span></a>
                 </li>
                 <li>
                     <a href="matiere.html"><span class="las la-bookmark" ></span>
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
             <div class="user-wrapper">
                 <img src="admin.png" width="35px" height="30px" alt="">
                 <div>
-                    <h4>Tchouta Alain</h4>
+                    <h4>TCHOUTA ALAIN</h4>
                     <small>Responsable de filiere</small>
                 </div>
             </div>

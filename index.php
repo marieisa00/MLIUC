@@ -25,7 +25,7 @@ include ("config.php");
             <ul>
                 <li>
                     <a href="index.html"><span class="las la-table" ></span>
-                    <span>Dashboard</span></a>
+                    <span>Tableau de bord</span></a>
                 </li>
                 <li>
                     <a href="matiere.html" ><span class="las la-bookmark" ></span>
@@ -33,7 +33,7 @@ include ("config.php");
                 </li>
                 <li>
                     <a href="classe.html" class="active"><span class="las la-user-graduate" ></span>
-                    <span>Classes</span></a>
+                    <span>Etudiants</span></a>
                 </li>
                 <li>
                     <a href="datatable.html"><span class="las la-business-time" ></span>
@@ -49,6 +49,7 @@ include ("config.php");
                 </li>
             </ul>
         </div>
+       
     </div>
 
     <div class="main-content">
@@ -56,7 +57,7 @@ include ("config.php");
             <h2>
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
-                    </label> Liste Inscrits
+                    </label> Etudiants
             </h2>
 
             <div class="search-wrapper">
@@ -67,7 +68,7 @@ include ("config.php");
             <div class="user-wrapper">
                 <img src="admin.png" width="35px" height="30px" alt="">
                 <div>
-                    <h4>John Doe</h4>
+                    <h4>TCHOUTA ALAIN</h4>
                     <small>Responsable de filiere</small>
                 </div>
             </div>
@@ -81,66 +82,66 @@ include ("config.php");
                                     </div>
                                 </form>
             
-            <div class="card">
-            <div class="card-body">
-                                <table width="100%">
-                                    <thead>
-                                        <tr>
-                                            <td>N°</td>
-                                            <td>NOM</td>
-                                            <td>PRENOM</td>
-                                            <td>MATRICULE</td>
-                                            <td>SEXE</td>
-                                            <td>CLASSE</td>
+    <div class="card">
+    <div class="card-body">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>N°</td>
+                        <td>NOM</td>
+                        <td>PRENOM</td>
+                        <td>MATRICULE</td>
+                        <td>SEXE</td>
+                        <td>CLASSE</td>
 
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                    <?php 
-                                    
+                    </tr>
+                </thead>
+                
+                <tbody>
+                <?php 
+                
 
-                                    if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM etudiant WHERE CONCAT(nom,prenom,matricule,sexe,classe) LIKE '%$filtervalues%' ";
-                                        $query_run = mysqli_query($con, $query);
+                if(isset($_GET['search']))
+                {
+                    $filtervalues = $_GET['search'];
+                    $query = "SELECT * FROM etudiant WHERE CONCAT(nom,prenom,matricule,sexe,classe) LIKE '%$filtervalues%' ";
+                    $query_run = mysqli_query($con, $query);
 
-                                        if(mysqli_num_rows($query_run) > 0)
-                                        {
-                                            foreach($query_run as $items)
-                                            {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $items['idEtudiant']; ?></td>
-                                                    <td><?= $items['nom']; ?></td>
-                                                    <td><?= $items['prenom']; ?></td>
-                                                    <td><?= $items['matricule']; ?></td>
-                                                    <td><?= $items['sexe']; ?></td>
-                                                    <td><?= $items['classe']; ?></td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                        else
-                                        {
-                                            ?>
-                                                <tr>
-                                                    <td colspan="6">No Record Found</td>
-                                                </tr>
-                                            <?php
-                                        }
-                                    }
-                                ?>
-                            </tbody>
+                    if(mysqli_num_rows($query_run) > 0)
+                    {
+                        foreach($query_run as $items)
+                        {
+                            ?>
+                            <tr>
+                                <td><?= $items['idEtudiant']; ?></td>
+                                <td><?= $items['nom']; ?></td>
+                                <td><?= $items['prenom']; ?></td>
+                                <td><?= $items['matricule']; ?></td>
+                                <td><?= $items['sexe']; ?></td>
+                                <td><?= $items['classe']; ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    else
+                    {
+                        ?>
+                            <tr>
+                                <td colspan="6">No Record Found</td>
+                            </tr>
+                        <?php
+                    }
+                }
+            ?>
+        </tbody>
 
-                                       
-                                        
-                                    
-                                </table>
-                            </div>
                             
-            </div>
+                            
+                        
+                    </table>
+                </div>
+                
+</div>
 
           
         </main>
