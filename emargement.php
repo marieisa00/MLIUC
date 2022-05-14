@@ -1,6 +1,6 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "mliuc");
-$sql = "SELECT * FROM inscrit";  
+$sql = "SELECT * FROM etudiant";  
 $result = mysqli_query($connect, $sql);
 ?>
 <html lang="en">
@@ -26,27 +26,27 @@ $result = mysqli_query($connect, $sql);
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html"><span class="las la-table" ></span>
+                    <a href="tabbord.php"><span class="las la-table" ></span>
                     <span>Tableau de bord</span></a>
                 </li>
                 <li>
-                    <a href="matiere.html"><span class="las la-bookmark" ></span>
+                    <a href="matiere.php"><span class="las la-bookmark" ></span>
                     <span>Matieres</span></a>
                 </li>
                 <li>
-                    <a href="classe.html"><span class="las la-user-graduate" ></span>
+                    <a href="index.php"><span class="las la-user-graduate" ></span>
                     <span>Etudiants</span></a>
                 </li>
                 <li>
-                    <a href="datatable.html"><span class="las la-business-time" ></span>
+                    <a href="display.php"><span class="las la-business-time" ></span>
                     <span>Liste Inscrits</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-user-circle" ></span>
+                    <a href="code1.php"><span class="las la-user-circle" ></span>
                     <span>Demandes</span></a>
                 </li>
                 <li>
-                    <a href="" class="active"><span class="las la-print"></span>
+                    <a href="emargement.php" class="active"><span class="las la-print"></span>
                     <span>Exporter</span></a>
                 </li>
             </ul>
@@ -105,15 +105,15 @@ $result = mysqli_query($connect, $sql);
 
     while ($row=mysqli_fetch_assoc($result)){
     
-    $nom=$row['nom'];
-    $prenom=$row['prenom'];
+    $nomEtudiant=$row['nomEtudiant'];
+    $prenomEtudiant=$row['prenomEtudiant'];
     $matricule=$row['matricule'];
     $matiere=$row['matiere'];
     $classe=$row['classe'];
     echo '<tr>
     
-    <td>'.$nom.'</td>
-    <td>'.$prenom.'</td>
+    <td>'.$nomEtudiant.'</td>
+    <td>'.$prenomEtudiant.'</td>
     <td>'.$matricule.'</td>
     <td>'.$matiere.'</td>
     <td>'.$classe.'</td>

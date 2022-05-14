@@ -4,7 +4,7 @@ $connect = mysqli_connect("localhost", "root", "", "mliuc");
 $output = '';
 if(isset($_POST["export"]))
 {
- $query = "SELECT * FROM inscrit";
+ $query = "SELECT * FROM etudiant";
  $result = mysqli_query($connect, $query);
  if(mysqli_num_rows($result) > 0)
  {
@@ -12,8 +12,8 @@ if(isset($_POST["export"]))
    <table class="table" bordered="1">  
                     <tr>  
                          
-                         <th>Nom</th>  
-                         <th>Prenom</th>  
+                         <th>NomEtudiant</th>  
+                         <th>PrenomEtudiant</th>  
        <th>Matricule</th>
        <th>Matiere</th>
        <th>Classe</th>
@@ -25,8 +25,8 @@ if(isset($_POST["export"]))
    $output .= '
     <tr>  
                           
-                         <td>'.$row["nom"].'</td>  
-                         <td>'.$row["prenom"].'</td>  
+     <td>'.$row["nomEtudiant"].'</td>  
+     <td>'.$row["prenomEtudiant"].'</td>  
        <td>'.$row["matricule"].'</td>  
        <td>'.$row["matiere"].'</td>
        <td>'.$row["classe"].'</td>

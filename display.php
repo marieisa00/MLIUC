@@ -25,27 +25,27 @@ include 'connect.php';
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html"><span class="las la-table" ></span>
+                    <a href="tabbord.php"><span class="las la-table" ></span>
                     <span>Tableau de bord</span></a>
                 </li>
                 <li>
-                    <a href="matiere.html"><span class="las la-bookmark" ></span>
+                    <a href="matiere.php"><span class="las la-bookmark" ></span>
                     <span>Matieres</span></a>
                 </li>
                 <li>
-                    <a href="classe.html"><span class="las la-user-graduate" ></span>
+                    <a href="index.php"><span class="las la-user-graduate" ></span>
                     <span>Etudiants</span></a>
                 </li>
                 <li>
-                    <a href="datatable.html" class="active"><span class="las la-business-time" ></span>
+                    <a href="display.php" class="active"><span class="las la-business-time" ></span>
                     <span>Liste Inscrits</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-user-circle" ></span>
+                    <a href="code1.php"><span class="las la-user-circle" ></span>
                     <span>Demandes</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-print"></span>
+                    <a href="emargement.php"><span class="las la-print"></span>
                     <span>Exporter</span></a>
                 </li>
             </ul>
@@ -79,9 +79,9 @@ include 'connect.php';
     <div class="card-header">
             <h3>Nouveaux Inscrits</h3>
             
-            <button><a href="inscrit.php" class="text-light">Ajoutez étudiant<span class="las la-arrow-right"></span></a>
+            <!--<button><a href="inscrit.php" class="text-light">Ajoutez étudiant<span class="las la-arrow-right"></span></a>
             
-            </button>
+            </button>-->
     </div>
             <div class="card">
             <div class="card-body">
@@ -103,26 +103,26 @@ include 'connect.php';
 
 <?php
 
-$sql="Select * from `inscrit`";
+$sql="Select * from `etudiant`";
 $result=mysqli_query($con,$sql);
 if($result){
     while ($row=mysqli_fetch_assoc($result)){
-    $idInscrit=$row['idInscrit'];
-    $nom=$row['nom'];
-    $prenom=$row['prenom'];
+    $idEtudiant=$row['idEtudiant'];
+    $nomEtudiant=$row['nomEtudiant'];
+    $prenomEtudiant=$row['prenomEtudiant'];
     $matricule=$row['matricule'];
     $matiere=$row['matiere'];
     $classe=$row['classe'];
     echo '<tr>
-    <th scope="row">'.$idInscrit.'</th>
-    <td>'.$nom.'</td>
-    <td>'.$prenom.'</td>
+    <th scope="row">'.$idEtudiant.'</th>
+    <td>'.$nomEtudiant.'</td>
+    <td>'.$prenomEtudiant.'</td>
     <td>'.$matricule.'</td>
     <td>'.$matiere.'</td>
     <td>'.$classe.'</td>
     <td>
-        <button class="btn btn-primary"><a href="update.php?updateid='.$idInscrit.'" class="text-light" >Mettre à jour</a></button>
-        <button class="btn btn-danger"><a href="delete.php?deleteid='.$idInscrit.'" class="text-light">Supprimer</a></button>
+        <button class="btn btn-primary"><a href="update.php?updateid='.$idEtudiant.'" class="text-light" >Mettre à jour</a></button>
+        <button class="btn btn-danger"><a href="delete.php?deleteid='.$idEtudiant.'" class="text-light">Supprimer</a></button>
     </td>
   </tr>';
     }

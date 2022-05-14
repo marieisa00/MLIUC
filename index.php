@@ -24,27 +24,27 @@ include ("config.php");
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html"><span class="las la-table" ></span>
+                    <a href="tabbord.php"><span class="las la-table" ></span>
                     <span>Tableau de bord</span></a>
                 </li>
                 <li>
-                    <a href="matiere.html" ><span class="las la-bookmark" ></span>
+                    <a href="matiere.php" ><span class="las la-bookmark" ></span>
                     <span>Matieres</span></a>
                 </li>
                 <li>
-                    <a href="classe.html" class="active"><span class="las la-user-graduate" ></span>
+                    <a href="index.php" class="active"><span class="las la-user-graduate" ></span>
                     <span>Etudiants</span></a>
                 </li>
                 <li>
-                    <a href="datatable.html"><span class="las la-business-time" ></span>
+                    <a href="display.php"><span class="las la-business-time" ></span>
                     <span>Liste Inscrits</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-user-circle" ></span>
+                    <a href="code1.php"><span class="las la-user-circle" ></span>
                     <span>Demandes</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-print"></span>
+                    <a href="emargement.php"><span class="las la-print"></span>
                     <span>Exporter</span></a>
                 </li>
             </ul>
@@ -91,7 +91,6 @@ include ("config.php");
                         <td>NOM</td>
                         <td>PRENOM</td>
                         <td>MATRICULE</td>
-                        <td>SEXE</td>
                         <td>CLASSE</td>
 
                     </tr>
@@ -104,7 +103,7 @@ include ("config.php");
                 if(isset($_GET['search']))
                 {
                     $filtervalues = $_GET['search'];
-                    $query = "SELECT * FROM etudiant WHERE CONCAT(nom,prenom,matricule,sexe,classe) LIKE '%$filtervalues%' ";
+                    $query = "SELECT * FROM etudiant WHERE CONCAT(nomEtudiant,prenomEtudiant,matricule,classe) LIKE '%$filtervalues%' ";
                     $query_run = mysqli_query($con, $query);
 
                     if(mysqli_num_rows($query_run) > 0)
@@ -114,10 +113,9 @@ include ("config.php");
                             ?>
                             <tr>
                                 <td><?= $items['idEtudiant']; ?></td>
-                                <td><?= $items['nom']; ?></td>
-                                <td><?= $items['prenom']; ?></td>
+                                <td><?= $items['nomEtudiant']; ?></td>
+                                <td><?= $items['prenomEtudiant']; ?></td>
                                 <td><?= $items['matricule']; ?></td>
-                                <td><?= $items['sexe']; ?></td>
                                 <td><?= $items['classe']; ?></td>
                             </tr>
                             <?php

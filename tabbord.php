@@ -22,27 +22,27 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html" class="active"><span class="las la-table" ></span>
+                    <a href="tabbord.php" class="active"><span class="las la-table" ></span>
                     <span>Tableau de bord</span></a>
                 </li>
                 <li>
-                    <a href="matiere.html"><span class="las la-bookmark" ></span>
+                    <a href="matiere.php"><span class="las la-bookmark" ></span>
                     <span>Matieres</span></a>
                 </li>
                 <li>
-                    <a href="classe.html"><span class="las la-user-graduate" ></span>
+                    <a href="index.php"><span class="las la-user-graduate" ></span>
                     <span>Etudiants</span></a>
                 </li>
                 <li>
-                    <a href="datatable.html"><span class="las la-business-time" ></span>
+                    <a href="display.php"><span class="las la-business-time" ></span>
                     <span>Liste Inscrits</span></a>
                 </li>
                 <li>
-                    <a href="code.html"><span class="las la-user-circle" ></span>
+                    <a href="code1.php"><span class="las la-user-circle" ></span>
                     <span>Demandes</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-print"></span>
+                    <a href="emargement.php"><span class="las la-print"></span>
                     <span>Exporter</span></a>
                 </li>
             </ul>
@@ -122,7 +122,7 @@
                         <div class="card-header">
                             <h3>Matière Semestre</h3>
 
-                            <a href="matiere.html"> <button>Tout voir <span class="las la-arrow-right">
+                            <a href="matiere.php"> <button>Tout voir <span class="las la-arrow-right">
                             </span></button></a>
                         </div>
 
@@ -222,7 +222,7 @@
                         <div class="card-header">
                             <h3>Nouveaux Inscrits</h3>
 
-                            <a href="datatable.html">
+                            <a href="display.php">
                                 <button>Tout voir <span class="las la-arrow-right"></span>
                                 </button>
                             </a>

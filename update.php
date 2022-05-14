@@ -1,25 +1,25 @@
 <?php
 include 'connect.php';
-$idInscrit=$_GET['updateid'];
-$sql="Select * from `inscrit` where idInscrit=$idInscrit";
+$idEtudiant=$_GET['updateid'];
+$sql="Select * from `etudiant` where idEtudiant=$idEtudiant";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
-$idInscrit=$row['idInscrit'];
-    $nom=$row['nom'];
-    $prenom=$row['prenom'];
+$idEtudiant=$row['idEtudiant'];
+    $nomEtudiant=$row['nomEtudiant'];
+    $prenomEtudiant=$row['prenomEtudiant'];
     $matricule=$row['matricule'];
     $matiere=$row['matiere'];
     $classe=$row['classe'];
 
 if(isset($_POST['submit'])){
 
-    $nom=$_POST['nom'];
-    $prenom=$_POST['prenom'];
+    $nomEtudiant=$_POST['nomEtudiant'];
+    $prenomEtudiant=$_POST['prenomEtudiant'];
     $matricule=$_POST['matricule'];
     $matiere=$_POST['matiere'];
     $classe=$_POST['classe'];
 
-    $sql="update `inscrit` set idInscrit=$idInscrit, nom='$nom', prenom='$prenom', matricule='$matricule', matiere='$matiere', classe='$classe' where idInscrit=$idInscrit";
+    $sql="update `etudiant` set idEtudiant=$idEtudiant, nomEtudiant='$nomEtudiant', prenomEtudiant='$prenomEtudiant', matricule='$matricule', matiere='$matiere', classe='$classe' where idEtudiant=$idEtudiant";
     $result=mysqli_query($con,$sql);
     if($result){
       //echo "Mise à jour avec succès!";
@@ -115,11 +115,11 @@ if(isset($_POST['submit'])){
             <form method="post">
                 <div class="mb-3">
                     <label>Nom</label>
-                    <input type="text" class="form-control" placeholder="Entrez le nom" name="nom" autocomplete="off" value=<?php echo $nom;?>>
+                    <input type="text" class="form-control" placeholder="Entrez le nom" name="nomEtudiant" autocomplete="off" value=<?php echo $nomEtudiant;?>>
                 </div>
                 <div class="mb-3">
                     <label>Prénom</label>
-                    <input type="text" class="form-control" placeholder="Entrez le prénom" name="prenom" autocomplete="off" value=<?php echo $prenom;?>>
+                    <input type="text" class="form-control" placeholder="Entrez le prénom" name="prenomEtudiant" autocomplete="off" value=<?php echo $prenomEtudiant;?>>
                 </div>
                 <div class="mb-3">
                     <label>Matricule</label>
